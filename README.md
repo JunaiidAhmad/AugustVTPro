@@ -9,7 +9,8 @@ Responsive Design: Built using Salesforce Lightning Design System (SLDS) to ensu
 Use Case
 This component is particularly useful in scenarios where users need to quickly check the status of a shipment directly from a record page in Salesforce. It can be added to any Lightning record page that involves the Shipment__c object, providing real-time updates on shipping statuses.
 
-How It Works: 
+How It Works:               
+
 LWC Component Structure
 HTML (shippingStatusLWC.html):
 The component uses a lightning-card to display the shipment status or an error message. The status is displayed conditionally based on the successful fetch operation.
