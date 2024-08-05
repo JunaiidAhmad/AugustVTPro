@@ -1,18 +1,21 @@
-# Salesforce DX Project: Next Steps
+ShippingStatusLWC Component
+Overview
+The ShippingStatusLWC is a Lightning Web Component (LWC) designed to display the shipping status of a particular shipment based on the recordId of a Shipment__c record in Salesforce. The component interacts with a custom Apex controller to fetch the shipping status from an external mock API endpoint.
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Features
+Displays Shipment Status: Fetches and displays the shipment status using an external API.
+Handles Errors Gracefully: Shows an error message if there is an issue fetching the status.
+Responsive Design: Built using Salesforce Lightning Design System (SLDS) to ensure a consistent user experience.
+Use Case
+This component is particularly useful in scenarios where users need to quickly check the status of a shipment directly from a record page in Salesforce. It can be added to any Lightning record page that involves the Shipment__c object, providing real-time updates on shipping statuses.
 
-## How Do You Plan to Deploy Your Changes?
+How It Works
+LWC Component Structure
+HTML (shippingStatusLWC.html):
+The component uses a lightning-card to display the shipment status or an error message. The status is displayed conditionally based on the successful fetch operation.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+JavaScript (shippingStatusLWC.js):
+The component fetches the shipment status using an Apex controller method. It sets the status or error based on the response.
 
-## Configure Your Salesforce DX Project
-
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+Apex Controller (ShipmentStatusController)
+The Apex controller queries the Shipment__c object to retrieve the tracking number and sends a GET request to an external mock API to retrieve the shipment status.
